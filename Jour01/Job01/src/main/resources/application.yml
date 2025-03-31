@@ -1,2 +1,24 @@
+spring:
+  profiles:
+    active: dev
+
 greeting:
   message: "test"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev     
+greeting:
+  message: "test dev"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+greeting:
+  message: "test prod"

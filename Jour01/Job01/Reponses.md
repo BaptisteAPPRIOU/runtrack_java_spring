@@ -19,3 +19,9 @@ fichiers de configuration ?
 
 Réponse : Spring permet l'injection de propriétés depuis des fichiers de
 configuration en utilisant des fichiers de propriétés ou des fichiers YAML.
+
+Question : Pourquoi serait-il utile d'avoir différents profils dans une
+application Spring ?
+
+Réponse : Il est utile d'avoir différents profils car cela permet différentes
+utilisations de l'app suivant l'utilisateur.
