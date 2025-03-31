@@ -14,3 +14,8 @@ Question : Qu'est-ce qu'un contrôleur dans le contexte de Spring MVC ?
 Réponse : Les contrôleurs sont les composants injectés par l'application, c'est
 le framework qui décide du composant à appliquer en fonction du contexte.
 
+Question : Comment Spring permet-il l'injection de propriétés depuis des
+fichiers de configuration ?
+
+Réponse : Spring permet l'injection de propriétés depuis des fichiers de
+configuration en utilisant des fichiers de propriétés ou des fichiers YAML.
