@@ -5,6 +5,9 @@
     <title>Vue Thymeleaf</title>
 </head>
 <body>
-    <h1 th:text="${message}">Message par défaut</h1>
+    <h1>Liste des Items</h1>
+    <ul>
+        <li th:each="item : ${items}" th:text="${item}">Item par défaut</li>
+    </ul>
 </body>
 </html>

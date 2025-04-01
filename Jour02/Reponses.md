@@ -13,3 +13,8 @@ permettant d'insérer des données dynamiques dans les pages en utilisant une sy
 il offre des fonctionnalités comme la validation côté serveur et la possibilité de prévisualiser les templates
 dans un navigateur sans serveur, ce qui n'est pas possible avec des templates HTML classiques.
 
+Question : Comment pouvez-vous passer des données d'un contrôleur à une
+vue dans Spring ?
+
+Réponse : Vous pouvez passer des données d'un contrôleur à une vue dans Spring en utilisant un objet `Model` ou `ModelAndView`.
+En ajoutant des attributs au modèle via la méthode `addAttribute`, ces données seront accessibles dans la vue. Par exemple :
