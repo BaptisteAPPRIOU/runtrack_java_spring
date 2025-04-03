@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des personnes</title>
+</head>
+<body>
+    <h1>Liste des Personnes</h1>
+    <ul>
+        <li th:each="person : ${persons}">
+            <span th:text="${person.name}">Nom</span> - 
+            <span th:text="${person.age}">Âge</span>
+            [<a th:href="@{'/persons/edit/' + ${person.id}}">Modifier</a>]
+            [<a th:href="@{'/persons/delete/' + ${person.id}}"
+                onclick="return confirm('Supprimer cette personne ?');">Supprimer</a>]
+        </li>
+    </ul>
+</body>
+</html>
