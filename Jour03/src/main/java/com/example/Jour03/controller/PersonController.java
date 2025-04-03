@@ -5,6 +5,9 @@ import com.example.Jour03.repository.PersonRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.List;
 
@@ -28,5 +31,26 @@ public class PersonController {
         List<Person> persons = personRepository.findAll();
         model.addAttribute("persons", persons);
         return "persons";
+    }
+
+    @GetMapping("/persons/edit/{id}")
+    public String editPerson(@PathVariable Long id, Model model) {
+        Person person = personRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid person Id:" + id));
+        model.addAttribute("person", person);
+        return "editPerson";
+    }
+
+    @PostMapping("/persons/update/{id}")
+    public String updatePerson(@PathVariable Long id, @ModelAttribute Person person) {
+        person.setId(id);
+        personRepository.save(person);
+        return "redirect:/persons";
+    }
+
+    @GetMapping("/persons/delete/{id}")
+    public String deletePerson(@PathVariable Long id) {
+        personRepository.deleteById(id);
+        return "redirect:/persons";
     }
 }
